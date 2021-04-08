@@ -34,10 +34,12 @@ Install:andUse("KSheet", {
 
 -- Remapping FIGMA keyboard shortcuts
 figmaHotkeys = {
-  -- Assign [ctrl + 1] to pick fill color
-  hs.hotkey.new('ctrl', '1', function() hs.eventtap.keyStroke('ctrl', 'c', 0) end),
-  -- Assign [cmd + 1] to set zoom to 100%
+-- WORKS Assign [cmd + 1] to set zoom to 100%
   hs.hotkey.new('cmd', '1', function() hs.eventtap.keyStroke('shift', '0', 0) end),
+-- FAILS Assign [shift+cmd + 1] to set zoom to fit all frames
+  hs.hotkey.new('cmd+shift', '1', function() hs.eventtap.keyStroke('shift', '1', 0) end),
+-- FAILS Assign [ctrl + 1] to pick fill color
+  hs.hotkey.new('ctrl', '1', function() hs.eventtap.keyStroke('ctrl', 'c', 0) end),
 }
 
 function enableFigmaHotkeys()
