@@ -1,3 +1,3 @@
 # hammerspoon
 
-Repo for varous hammerspoon-related projects
+Repo for various hammerspoon-related projects
