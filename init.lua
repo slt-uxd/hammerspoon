@@ -11,8 +11,6 @@ spoon.SpoonInstall.use_syncinstall = true
 Install=spoon.SpoonInstall
 
 -- KSheet Spoon: Press ctrl+alt+cmd+/ to displays list of hotkeys for active app
-
-
 Install:andUse("KSheet", {
                  hotkeys = {
                    toggle = { {"ctrl","alt","cmd"} , "/" }
@@ -20,7 +18,7 @@ Install:andUse("KSheet", {
 })
 
 -- Re-mapping keyboard shortcuts
--- This is based on Ellit Waite's init.lua file from 
+-- This is based on Elliot Waite's init.lua file from 
 -- https://github.com/elliotwaite/hammerspoon-config
 
 -- ************************* START *****************************
