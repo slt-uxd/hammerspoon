@@ -98,30 +98,7 @@ KEY_CODE_TO_SIBLING_KEY_CODE = {
 --         Same format as `fromKey`.
 --
 SIDE_SPECIFIC_HOTKEYS = {
-  {'leftCmd', 'u', 'alt', 'left'},
-  {'leftCmd+leftShift', 'u', 'alt+shift', 'left'},
-  {'leftCmd', 'i', nil, 'up'},
-  {'leftCmd+leftShift', 'i', 'cmd+shift', 'up'},
-  {'leftCmd+rightShift', 'i', 'shift', 'up'},
-  {'leftCmd+leftShift+rightShift', 'i', 'shift', 'up'},
-  {'leftCmd', 'o', 'alt', 'right'},
-  {'leftCmd+leftShift', 'o', 'alt+shift', 'right'},
-  {'leftCmd', 'h', 'cmd', 'left'},
-  {'leftCmd+leftShift', 'h', 'cmd+shift', 'left'},
-  {'leftCmd', 'j', nil, 'left'},
-  {'leftCmd+leftShift', 'j', 'shift', 'left'},
-  {'leftCmd+rightShift', 'j', 'shift', 'left'},
-  {'leftCmd', 'k', nil, 'down'},
-  {'leftCmd+leftShift', 'k', 'cmd+shift', 'down'},
-  {'leftCmd+rightShift', 'k', 'shift', 'down'},
-  {'leftCmd+leftShift+rightShift', 'k', 'shift', 'down'},
-  {'leftCmd', 'l', nil, 'right'},
-  {'leftCmd+leftShift', 'l', 'shift', 'right'},
-  {'leftCmd+rightShift', 'l', 'shift', 'right'},
-  {'leftCmd', ';', 'cmd', 'right'},
-  {'leftCmd+leftShift', ';', 'cmd+shift', 'right'},
-  {'leftCmd', "'", 'cmd', 'right'},
-  {'leftCmd+leftShift', "'", 'cmd+shift', 'right'},
+-- Empty for now
 }
 
 hotkeyGroups = {}
