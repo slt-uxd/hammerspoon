@@ -12,17 +12,10 @@ Install=spoon.SpoonInstall
 
 -- KSheet Spoon: Press ctrl+alt+cmd+/ to displays list of hotkeys for active app
 
--- Tokens for key modifier combinations 
-sc    = {"shift","cmd"}
-cc    = {"ctrl","cmd"}
-ac    = {"alt","cmd"}
-sac   = {"shift","alt","cmd"}
-cac   = {"ctrl","alt","cmd"}
-scac  = {"shift","ctrl","alt","cmd"}
 
 Install:andUse("KSheet", {
                  hotkeys = {
-                   toggle = { cac , "/" }
+                   toggle = { {"ctrl","alt","cmd"} , "/" }
                  }
 })
 
