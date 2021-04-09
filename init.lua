@@ -172,7 +172,8 @@ modKeyWatcher = hs.eventtap.new({hs.eventtap.event.types.flagsChanged}, function
 end):start()
 
 
--- Remapping FIGMA keyboard shortcuts
+-- Remapping FIGMA keyboard shortcuts 
+-- The new command is shown on the left, and the mapped command is shown on the right
 
 figmaHotkeys = {
 
@@ -202,6 +203,12 @@ figmaHotkeys = {
 
 -- Assign [alt+cmd + d] to detach instance
   hs.hotkey.new('leftAlt+leftCmd', 'd', function() hs.eventtap.keyStroke('alt+cmd', 'b', 0) end),
+
+-- Assign [alt+cmd + f] to frame selection
+  hs.hotkey.new('leftAlt+leftCmd', 'f', function() hs.eventtap.keyStroke('alt+cmd', 'g', 0) end),
+
+-- Assign [shift+cmd + f] to resize frame to fit its contents
+  hs.hotkey.new('leftCmd+leftShift', 'f', function() hs.eventtap.keyStroke('alt+cmd+shift', 'r', 0) end),
 
 -- Assign [capslock] to toggle locking *** NOT WORKING ***
   hs.hotkey.new(nil, 'capslock', function() hs.eventtap.keyStroke('shift+cmd', 'l', 0) end),
