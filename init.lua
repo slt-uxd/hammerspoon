@@ -172,7 +172,8 @@ modKeyWatcher = hs.eventtap.new({hs.eventtap.event.types.flagsChanged}, function
 end):start()
 
 
--- Remapping FIGMA keyboard shortcuts 
+-- ************ Remapping FIGMA keyboard shortcuts ************** 
+
 -- The new command is shown on the left, and the mapped command is shown on the right
 
 figmaHotkeys = {
@@ -210,7 +211,12 @@ figmaHotkeys = {
 -- Assign [shift+cmd + f] to resize frame to fit its contents
   hs.hotkey.new('leftCmd+leftShift', 'f', function() hs.eventtap.keyStroke('alt+cmd+shift', 'r', 0) end),
 
--- Assign [capslock] to toggle locking *** NOT WORKING ***
+-- Assign [cmd + 5] to select parent
+  hs.hotkey.new('leftCmd', '5', function() hs.eventtap.keyStroke('shift', 'return', 0) end),
+
+-- *** NOT WORKING *** 
+
+-- Assign [capslock] to toggle locking
   hs.hotkey.new(nil, 'capslock', function() hs.eventtap.keyStroke('shift+cmd', 'l', 0) end),
 
 }
@@ -239,7 +245,8 @@ end
 
 -- ************************* END *****************************
 
--- Note: the below caused an error; unable to load spoon (relating to function 'xpcall')
+-- Note: The code below caused an error: unable to load spoon (relating to function 'xpcall')
+
 -- This code automatically realoads this hammer configutation file
 -- whenever a file in the ~/.hammerspoon directory is changed, and shows
 -- the alert, "Config reloaded," whenever it does. I enable this code
