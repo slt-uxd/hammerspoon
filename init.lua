@@ -173,13 +173,39 @@ end):start()
 
 
 -- Remapping FIGMA keyboard shortcuts
+
 figmaHotkeys = {
--- WORKS Assign [cmd + 1] to set zoom to 100%
+
+-- Assign [cmd + `] to zoom to selection
+  hs.hotkey.new('leftCmd', '`', function() hs.eventtap.keyStroke('shift', '2', 0) end),
+
+-- Assign [cmd + 1] to zoom to 100%
   hs.hotkey.new('leftCmd', '1', function() hs.eventtap.keyStroke('shift', '0', 0) end),
--- FAILS Assign [shift+cmd + 1] to set zoom to fit all frames
-  hs.hotkey.new('leftCmd+leftShift', '1', function() hs.eventtap.keyStroke('shift', '1', 0) end),
--- FAILS Assign [ctrl + 1] to pick fill color
-  hs.hotkey.new('leftCtrl', '1', function() hs.eventtap.keyStroke('ctrl', 'c', 0) end),
+
+-- Assign [cmd + 2] to zoom out
+  hs.hotkey.new('leftCmd', '2', function() hs.eventtap.keyStroke(nil, '-', 0) end),
+
+-- Assign [cmd + 3] to zoom in
+  hs.hotkey.new('leftCmd', '3', function() hs.eventtap.keyStroke(nil, '=', 0) end),
+
+-- Assign [shift+cmd + ]] to zoom to next frame
+  hs.hotkey.new('leftCmd+leftShift', ']', function() hs.eventtap.keyStroke(nil, 'n', 0) end),
+
+-- Assign [shift+cmd + ]] to zoom to previous frame
+  hs.hotkey.new('leftCmd+leftShift', '[', function() hs.eventtap.keyStroke('shift', 'n', 0) end),
+
+-- Assign [cmd + 4] to align v center
+  hs.hotkey.new('leftCmd', '4', function() hs.eventtap.keyStroke('alt', 'v', 0) end),
+
+-- Assign [alt+cmd + l] to open library panel
+  hs.hotkey.new('leftAlt+leftCmd', 'l', function() hs.eventtap.keyStroke('alt+cmd', 'o', 0) end),
+
+-- Assign [alt+cmd + d] to detach instance
+  hs.hotkey.new('leftAlt+leftCmd', 'd', function() hs.eventtap.keyStroke('alt+cmd', 'b', 0) end),
+
+-- Assign [capslock] to toggle locking *** NOT WORKING ***
+  hs.hotkey.new(nil, 'capslock', function() hs.eventtap.keyStroke('shift+cmd', 'l', 0) end),
+
 }
 
 function enableFigmaHotkeys()
@@ -199,8 +225,8 @@ figmaWindowFilter:subscribe(hs.window.filter.windowFocused, enableFigmaHotkeys)
 figmaWindowFilter:subscribe(hs.window.filter.windowUnfocused, disableFigmaHotkeys)
 
 if hs.window.focusedWindow() and hs.window.focusedWindow():application():name() == 'Figma' then
-  -- If this script is initialized with a Brave window already in
-  -- focus, enable the Brave hotkeys.
+  -- If this script is initialized with a Figma window already in
+  -- focus, enable the Figma hotkeys.
   enableFigmaHotkeys()
 end
 
